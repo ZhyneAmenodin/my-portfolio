@@ -7,6 +7,8 @@ import Navbar from "./components/navbar";
 import About from "./pages/aboutMe/about";
 import Services from "./pages/services/services";
 import Projects from "./pages/projects/projects";
+import Footer from "./pages/footer/footer";
+
 //---------------------------
 const RootStyle = styled("div")(({ theme }) => ({
   backgroundImage: `url(${bg})`,
@@ -28,6 +30,7 @@ export default function App() {
       <About />
       <Services />
       <Projects />
+      <Footer />
     </RootStyle>
   );
 }

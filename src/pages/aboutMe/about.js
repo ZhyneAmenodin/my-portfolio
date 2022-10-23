@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import { Container, Grid, Box, Typography, Avatar } from "@mui/material";
 import Link from "@mui/material/Link";
 //-------------------
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import img1 from "../../assets/picture1.png";
 //-----------------------
 const RootStyle = styled("div")(({ theme }) => ({
@@ -68,6 +69,14 @@ export default function about() {
                 minimalist, efficient websites. I enjoy creating extremely
                 visual experiences using up to date technologies..
               </Typography>
+              <Link
+                variant="h6"
+                href="CV.pdf"
+                sx={{ p: 1, color: "blue", letterSpacing: 3 }}
+                underline="none"
+              >
+                {"> show more details"}
+              </Link>
             </Grid>
             <Grid sx={{ mt: 3 }}>
               <Link

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { styled } from "@mui/material/styles";
+import bg from "./assets/bg.png";
+//---------------------------
+import Home from "./pages/home/home";
+import Navbar from "./components/navbar";
+import About from "./pages/aboutMe/about";
+import Services from "./pages/services/services";
+import Projects from "./pages/projects/projects";
+//---------------------------
+const RootStyle = styled("div")(({ theme }) => ({
+  backgroundImage: `url(${bg})`,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  backgroundAttachment: "fixed",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  width: "100%",
+  height: "100%",
+}));
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RootStyle>
+      <Navbar />
+      <Home />
+      <About />
+      <Services />
+      <Projects />
+    </RootStyle>
   );
 }
-
-export default App;

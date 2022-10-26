@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import bg from "./assets/bg.png";
 //---------------------------
 import Home from "./pages/home/home";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import About from "./pages/aboutMe/about";
 import Services from "./pages/services/services";
 import Projects from "./pages/projects/projects";

@@ -2,30 +2,25 @@ import React from "react";
 import { Grid, Typography, Stack, Avatar, Tooltip } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Scrollbar } from "swiper";
 import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
-// IMGs --------------------------------------
-import img1 from "../../assets/lp.svg";
-import sys1 from "../../assets/bestea/img2.svg";
-import sys2 from "../../assets/bestea/img1.svg";
-import sys3 from "../../assets/bestea/img3.svg";
-import sys4 from "../../assets/bestea/img4.svg";
-// --------------------------------------------
+import { Pagination } from "swiper";
+import {
+  SiQuasar,
+  SiTypescript,
+  SiNestjs,
+  SiMysql,
+  SiVisualstudio,
+} from "react-icons/si";
+import { FaVuejs } from "react-icons/fa";
+import "./image.scss";
+
+import ProjectSlide from "../projects/projectSlide";
+
 const RootStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(30, 0),
 }));
-
-const systemImg = [
-  { id: 1, img: sys1 },
-  { id: 2, img: sys2 },
-  { id: 3, img: sys3 },
-  { id: 4, img: sys4 },
-];
 
 export default function Projects() {
   return (
@@ -52,112 +47,173 @@ export default function Projects() {
           </Typography>
         </Stack>
 
-        <Stack
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          sx={{ mt: 10 }}
+        <Swiper
+          className="mySwiper swiper-h"
+          spaceBetween={50}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
         >
-          <Stack>
-            <img
-              alt="Me"
-              src={img1}
-              style={{
-                height: 650,
-                position: "absolute",
-              }}
-            />
-            <Swiper
-              style={{
-                height: 321,
-                width: 538,
-                zIndex: 99,
-                marginTop: 98,
-                marginLeft: 115,
-                marginRight: 30,
-                padding: 28,
-              }}
-              modules={[Autoplay]}
-              spaceBetween={50}
-              slidesPerView={1}
-              centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
-            >
-              {systemImg.map((img) => (
-                <SwiperSlide>
-                  <img
-                    alt={img.id}
-                    src={img.img}
-                    style={{ height: 320, width: 560 }}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </Stack>
-
-          <Grid item direction="column" sx={{ mr: 5 }}>
-            <Typography variant="h4" sx={{ ml: 20, color: "white" }}>
-              BesTea POS and Inventory System
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{ p: 3, color: "white", textAlign: "justify" }}
-            >
-              A Point of sale System with an Inventory system designed to
-              improve the efficiency of the work flow of restaurant BesTea; the
-              client of this project
-            </Typography>
-            <Grid
+          <SwiperSlide style={{ paddingBottom: 15 }}>
+            <Stack
               container
-              justifyContent="flex-end"
               direction="row"
-              sx={{ mt: 5 }}
+              justifyContent="center"
+              alignItems="center"
             >
-              <Typography
-                variant="h7"
-                sx={{
-                  padding: 2,
-                  color: "white",
-                }}
+              <Stack direction="column">
+                <ProjectSlide />
+              </Stack>
+
+              <Stack
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                sx={{ mt: 10, height: "85vh" }}
               >
-                Built using:
-              </Typography>
-              <Tooltip title="Typescript">
-                <Avatar
-                  sx={{ p: 1 }}
-                  alt="Typescript"
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-                />
-              </Tooltip>
-              <Tooltip title="Nest.js">
-                <Avatar
-                  sx={{ p: 1 }}
-                  alt="nestJs"
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg"
-                />
-              </Tooltip>
-              <Tooltip title="MySQL">
-                <Avatar
-                  sx={{ p: 1 }}
-                  alt="mysql"
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
-                />
-              </Tooltip>
-              <Tooltip title="Visual Studio Code">
-                <Avatar
-                  sx={{ p: 1 }}
-                  alt="VScode"
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
-                />
-              </Tooltip>
-            </Grid>
-          </Grid>
-        </Stack>
+                <Grid item direction="column" sx={{ mt: 20, mr: 5 }}>
+                  <Typography variant="h4" sx={{ ml: 20, color: "white" }}>
+                    BesTea POS and Inventory System
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{ p: 3, color: "white", textAlign: "justify" }}
+                  >
+                    A Point of sale System with an Inventory system designed to
+                    improve the efficiency of the work flow of restaurant
+                    BesTea; the client of this project
+                  </Typography>
+                  <Grid
+                    container
+                    justifyContent="flex-end"
+                    direction="row"
+                    sx={{ mt: 5 }}
+                  >
+                    <Typography
+                      variant="h7"
+                      sx={{
+                        padding: 2,
+                        color: "white",
+                      }}
+                    >
+                      Built using:
+                    </Typography>
+                    <Tooltip title="Quasar">
+                      <div className="icon">
+                        <SiQuasar />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Typescript">
+                      <div className="icon">
+                        <SiTypescript />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Vue.js">
+                      <div className="icon">
+                        <FaVuejs />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Nest.js">
+                      <div className="icon">
+                        <SiNestjs />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="MySQL">
+                      <div className="icon">
+                        <SiMysql />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Visual Studio Code">
+                      <div className="icon">
+                        <SiVisualstudio />
+                      </div>
+                    </Tooltip>
+                  </Grid>
+                </Grid>
+              </Stack>
+            </Stack>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Stack
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Stack direction="column">
+                <ProjectSlide />
+              </Stack>
+
+              <Stack
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                sx={{ mt: 10, height: "85vh" }}
+              >
+                <Grid item direction="column" sx={{ mt: 20, mr: 5 }}>
+                  <Typography variant="h4" sx={{ ml: 20, color: "white" }}>
+                    BesTea POS and Inventory System
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{ p: 3, color: "white", textAlign: "justify" }}
+                  >
+                    A Point of sale System with an Inventory system designed to
+                    improve the efficiency of the work flow of restaurant
+                    BesTea; the client of this project
+                  </Typography>
+                  <Grid
+                    container
+                    justifyContent="flex-end"
+                    direction="row"
+                    sx={{ mt: 5 }}
+                  >
+                    <Typography
+                      variant="h7"
+                      sx={{
+                        padding: 2,
+                        color: "white",
+                      }}
+                    >
+                      Built using:
+                    </Typography>
+                    <Tooltip title="Quasar">
+                      <div className="icon">
+                        <SiQuasar />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Typescript">
+                      <div className="icon">
+                        <SiTypescript />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Vue.js">
+                      <div className="icon">
+                        <FaVuejs />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Nest.js">
+                      <div className="icon">
+                        <SiNestjs />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="MySQL">
+                      <div className="icon">
+                        <SiMysql />
+                      </div>
+                    </Tooltip>
+                    <Tooltip title="Visual Studio Code">
+                      <div className="icon">
+                        <SiVisualstudio />
+                      </div>
+                    </Tooltip>
+                  </Grid>
+                </Grid>
+              </Stack>
+            </Stack>
+          </SwiperSlide>
+        </Swiper>
       </Grid>
     </RootStyle>
   );

@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
@@ -6,10 +5,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { IconButton, Grid } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../assets/LogoTest.svg";
-export default function navbar() {
+import React, { useState } from "react";
+import ModalNavbar from "./ModalNavbar";
+
+export default function Navbar() {
+  const [openModal, setOpenModal] = useState();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "rgba(0,0,0,.5)" }}>
@@ -35,14 +37,7 @@ export default function navbar() {
             </Typography>
           </Grid>
           <Grid>
-            <IconButton
-              size="large"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <ModalNavbar />
           </Grid>
         </Toolbar>
       </AppBar>

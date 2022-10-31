@@ -1,7 +1,8 @@
-import { Typography, Grid, Stack } from "@mui/material";
+import { Typography, Grid, Stack, Link } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 
+import { Link as RouterLink } from "react-router-dom";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 
@@ -10,18 +11,23 @@ import { IconButton, Button } from "@mui/material";
 import { TfiClose } from "react-icons/tfi";
 import Logo from "../assets/LogoTest.svg";
 import "./modalStyle.scss";
+import DialogAnimate from "./DialogAnimate";
+import { PATH_PAGE } from "../routes/path";
+
+const LINKS = [
+  {
+    name: "home",
+    href: PATH_PAGE.home,
+  },
+  {
+    name: "about",
+    href: PATH_PAGE.about,
+  },
+];
 
 export default function ModalNavbar() {
   const [open, setOpen] = useState(false);
-  const modalStyle = {
-    position: "absolute",
-    top: "100%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    bgcolor: "background.paper",
-    boxShadow: 24,
-    p: 4,
-  };
+
   return (
     <>
       <IconButton
@@ -72,34 +78,146 @@ export default function ModalNavbar() {
               </Typography>
               <Button onClick={() => setOpen(false)}>
                 <div className="iconX">
-                  <TfiClose />
+                  <TfiClose className="closeBTN" />
                 </div>
               </Button>
             </Grid>
-            <Grid
+            <Stack
+              container
+              direction="column"
+              justifyContent="center"
+              alignItems="stretch"
               md={12}
-              sx={{ margin: 10, backgroundColor: "black", height: "700px" }}
+              spacing={5}
+              sx={{ margin: 10, backgroundColor: "black", height: "540px" }}
             >
-              <Typography variant="h2" sx={{ color: "white" }}>
-                Home
-              </Typography>
-              <Typography variant="h2" sx={{ color: "white" }}>
-                {" "}
-                Home
-              </Typography>
-              <Typography variant="h2" sx={{ color: "white" }}>
-                {" "}
-                Home
-              </Typography>
-              <Typography variant="h2" sx={{ color: "white" }}>
-                {" "}
-                Home
-              </Typography>
-              <Typography variant="h2" sx={{ color: "white" }}>
-                {" "}
-                Home
-              </Typography>
-            </Grid>
+              <Stack item direction="row" md={12} className="links">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "white",
+                    mt: 3,
+                    paddingX: 4,
+                    textDecoration: "underline",
+                    opacity: "40%",
+                  }}
+                >
+                  {" "}
+                  01
+                </Typography>
+                <Link
+                  variant="h2"
+                  sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
+                  underline="none"
+                  to="/"
+                  component={RouterLink}
+                  onClick={() => setOpen(false)}
+                >
+                  Home
+                </Link>
+              </Stack>
+              <Stack item direction="row" md={12} className="links">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "white",
+                    mt: 3,
+                    paddingX: 4,
+                    textDecoration: "underline",
+                    opacity: "40%",
+                  }}
+                >
+                  {" "}
+                  02
+                </Typography>
+                <Link
+                  variant="h2"
+                  sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
+                  underline="none"
+                  to="/about"
+                  state={{ data: true }}
+                  component={RouterLink}
+                  onClick={() => setOpen(false)}
+                >
+                  About
+                </Link>
+              </Stack>
+              <Stack item direction="row" md={12} className="links">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "white",
+                    mt: 3,
+                    paddingX: 4,
+                    textDecoration: "underline",
+                    opacity: "40%",
+                  }}
+                >
+                  {" "}
+                  03
+                </Typography>
+                <Link
+                  variant="h2"
+                  sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
+                  underline="none"
+                  to="/services"
+                  component={RouterLink}
+                  onClick={() => setOpen(false)}
+                >
+                  Services
+                </Link>
+              </Stack>
+              <Stack item direction="row" md={12} className="links">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "white",
+                    mt: 3,
+                    paddingX: 4,
+                    textDecoration: "underline",
+                    opacity: "40%",
+                  }}
+                >
+                  {" "}
+                  04
+                </Typography>
+                <Link
+                  variant="h2"
+                  sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
+                  underline="none"
+                  to="/portfolio"
+                  component={RouterLink}
+                  onClick={() => setOpen(false)}
+                >
+                  Portfolio
+                </Link>
+              </Stack>
+              <Stack item direction="row" md={12} className="links">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "white",
+                    mt: 3,
+                    paddingX: 4,
+                    textDecoration: "underline",
+                    opacity: "40%",
+                  }}
+                >
+                  {" "}
+                  05
+                </Typography>
+                <Link
+                  variant="h2"
+                  sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
+                  underline="none"
+                  to="/contact"
+                  component={RouterLink}
+                  onClick={() => setOpen(false)}
+                >
+                  Contact
+                </Link>
+              </Stack>
+            </Stack>
           </Grid>
         </Stack>
       </Dialog>

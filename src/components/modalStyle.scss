@@ -24,3 +24,19 @@
   color: white;
   line-height: 0;
 }
+.links {
+  transition: transform 0.2s;
+}
+
+.links:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.closeBTN {
+  transition: transform 0.2s;
+}
+.closeBTN:hover {
+  color: red;
+  transform: scale(1.3);
+}

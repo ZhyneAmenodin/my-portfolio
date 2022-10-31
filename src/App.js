@@ -8,7 +8,7 @@ import About from "./pages/aboutMe/about";
 import Services from "./pages/services/services";
 import Projects from "./pages/projects/projects";
 import Footer from "./pages/footer/footer";
-
+import Router from "./routes";
 //---------------------------
 const RootStyle = styled("div")(({ theme }) => ({
   backgroundImage: `url(${bg})`,
@@ -25,12 +25,7 @@ const RootStyle = styled("div")(({ theme }) => ({
 export default function App() {
   return (
     <RootStyle>
-      <Navbar />
-      <Home />
-      <About />
-      <Services />
-      <Projects />
-      <Footer />
+      <Router />
     </RootStyle>
   );
 }

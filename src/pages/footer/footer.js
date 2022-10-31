@@ -11,7 +11,7 @@ const hoverIconSX = {
   },
 };
 
-export default function footer() {
+export default function Footer() {
   return (
     <RootStyle>
       <Grid container justifyContent="center" alignItems="center">

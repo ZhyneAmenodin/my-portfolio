@@ -14,7 +14,7 @@ export default function Navbar() {
   const [openModal, setOpenModal] = useState();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "rgba(0,0,0,.5)" }}>
+      <AppBar sx={{ zIndex: 999, backgroundColor: "rgba(0,0,0,.5)" }}>
         <Toolbar>
           <Grid sx={{ display: "flex" }}>
             <img

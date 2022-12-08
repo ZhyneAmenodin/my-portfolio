@@ -4,6 +4,7 @@ import { Container, Grid, Box, Typography, Stack } from "@mui/material";
 import LinearProgress from "@mui/material/LinearProgress";
 import Link from "@mui/material/Link";
 import { useLocation } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { useState } from "react";
 //-------------------
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -88,7 +89,9 @@ export default function About(openFull) {
               {data === true ? null : (
                 <Link
                   variant="h6"
-                  href="CV.pdf"
+                  to="/about"
+                  state={{ data: true }}
+                  component={RouterLink}
                   sx={{ p: 1, color: "blue", letterSpacing: 3 }}
                   underline="none"
                 >
@@ -138,7 +141,7 @@ export default function About(openFull) {
                 <Typography variant="h5" sx={{ mr: 1, color: "whitesmoke" }}>
                   Email:{" "}
                   <span style={{ color: "blue" }}>
-                    amenodin.za28@s.msumain.edu.ph
+                    zhyne.amenodin@gmail.com
                   </span>
                 </Typography>
               </Grid>
@@ -629,6 +632,66 @@ export default function About(openFull) {
                       </Stack>
                     </Grid>
                   </Grid>
+                </Grid>
+                <Grid container sx={{ mt: 10 }}>
+                  <Typography variant="h4" sx={{ color: "white" }}>
+                    {" "}
+                    Experience{" "}
+                  </Typography>
+                  <Stack>
+                    <Stack direction="row" sx={{ mt: 10 }}>
+                      <Typography variant="h5" sx={{ color: "white" }}>
+                        Front-end Developer intern
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          color: "white",
+                          opacity: "45%",
+                          ml: 1,
+                        }}
+                      >
+                        - Asia Pacific Global IT SOlutions inc.
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          color: "white",
+                          opacity: "45%",
+                          ml: 24,
+                        }}
+                      >
+                        2022(sept) - 2022(nov)
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                  <Stack>
+                    <Stack direction="row" sx={{ mt: 10 }}>
+                      <Typography variant="h5" sx={{ color: "white" }}>
+                        Software Programmer
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          color: "white",
+                          opacity: "45%",
+                          ml: 1,
+                        }}
+                      >
+                        - Asia Pacific Global IT SOlutions inc.
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          color: "white",
+                          opacity: "45%",
+                          ml: 30,
+                        }}
+                      >
+                        Present Job
+                      </Typography>
+                    </Stack>
+                  </Stack>
                 </Grid>
               </Grid>
             </>

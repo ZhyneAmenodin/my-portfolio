@@ -12,11 +12,14 @@ import {
   SiNestjs,
   SiMysql,
   SiVisualstudio,
+  SiJava,
 } from "react-icons/si";
+import { DiNetbeans } from "react-icons/di";
 import { FaVuejs } from "react-icons/fa";
-import "./image.scss";
+import "./image.css";
 
 import ProjectSlide from "../projects/projectSlide";
+import ProjectSlide2 from "../projects/projectSlide2";
 
 const RootStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(30, 0),
@@ -142,7 +145,7 @@ export default function Projects() {
               alignItems="center"
             >
               <Stack direction="column">
-                <ProjectSlide />
+                <ProjectSlide2 />
               </Stack>
 
               <Stack
@@ -153,15 +156,15 @@ export default function Projects() {
               >
                 <Grid item direction="column" sx={{ mt: 20, mr: 5 }}>
                   <Typography variant="h4" sx={{ ml: 20, color: "white" }}>
-                    BesTea POS and Inventory System
+                    Dormitory Management System
                   </Typography>
                   <Typography
                     variant="h5"
                     sx={{ p: 3, color: "white", textAlign: "justify" }}
                   >
-                    A Point of sale System with an Inventory system designed to
-                    improve the efficiency of the work flow of restaurant
-                    BesTea; the client of this project
+                    A System Designed to provide a computerized dormitory
+                    management such as room allocations, profiling for student
+                    residents, and etc.
                   </Typography>
                   <Grid
                     container
@@ -178,34 +181,20 @@ export default function Projects() {
                     >
                       Built using:
                     </Typography>
-                    <Tooltip title="Quasar">
+                    <Tooltip title="Java">
                       <div className="icon">
-                        <SiQuasar />
+                        <SiJava />
                       </div>
                     </Tooltip>
-                    <Tooltip title="Typescript">
-                      <div className="icon">
-                        <SiTypescript />
-                      </div>
-                    </Tooltip>
-                    <Tooltip title="Vue.js">
-                      <div className="icon">
-                        <FaVuejs />
-                      </div>
-                    </Tooltip>
-                    <Tooltip title="Nest.js">
-                      <div className="icon">
-                        <SiNestjs />
-                      </div>
-                    </Tooltip>
+
                     <Tooltip title="MySQL">
                       <div className="icon">
                         <SiMysql />
                       </div>
                     </Tooltip>
-                    <Tooltip title="Visual Studio Code">
+                    <Tooltip title="Netbeans">
                       <div className="icon">
-                        <SiVisualstudio />
+                        <DiNetbeans />
                       </div>
                     </Tooltip>
                   </Grid>

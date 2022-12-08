@@ -10,7 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { IconButton, Button } from "@mui/material";
 import { TfiClose } from "react-icons/tfi";
 import Logo from "../assets/LogoTest.svg";
-import "./modalStyle.scss";
+import "./modalStyle.css";
 import DialogAnimate from "./DialogAnimate";
 import { PATH_PAGE } from "../routes/path";
 

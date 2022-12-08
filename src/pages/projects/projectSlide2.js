@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "./image.css";
+
 // IMGs --------------------------------------
 
 import img1 from "../../assets/lp.svg";
@@ -22,12 +23,12 @@ import sys4 from "../../assets/bestea/img4.svg";
 const RootStyle = styled("div")(({ theme }) => ({
   padding: theme.spacing(5, 0),
 }));
-export default function ProjectSlide() {
+export default function ProjectSlide2() {
   const systemImg = [
-    { id: 1, img: sys1 },
-    { id: 2, img: sys2 },
-    { id: 3, img: sys3 },
-    { id: 4, img: sys4 },
+    {
+      id: 1,
+      img: "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg",
+    },
   ];
 
   return (
@@ -67,7 +68,7 @@ export default function ProjectSlide() {
               <img
                 alt={img.id}
                 src={img.img}
-                style={{ height: 320, width: 560 }}
+                style={{ height: 320, width: 560, objectFit: "contain" }}
               />
             </SwiperSlide>
           ))}

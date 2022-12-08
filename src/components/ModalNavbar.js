@@ -109,7 +109,7 @@ export default function ModalNavbar() {
                   variant="h2"
                   sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
                   underline="none"
-                  to="/"
+                  to="/my-portfolio"
                   component={RouterLink}
                   onClick={() => setOpen(false)}
                 >
@@ -134,7 +134,7 @@ export default function ModalNavbar() {
                   variant="h2"
                   sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
                   underline="none"
-                  to="/about"
+                  to="/my-portfolio/about"
                   state={{ data: true }}
                   component={RouterLink}
                   onClick={() => setOpen(false)}
@@ -160,7 +160,7 @@ export default function ModalNavbar() {
                   variant="h2"
                   sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
                   underline="none"
-                  to="/services"
+                  to="/my-portfolio/services"
                   component={RouterLink}
                   onClick={() => setOpen(false)}
                 >
@@ -185,7 +185,7 @@ export default function ModalNavbar() {
                   variant="h2"
                   sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
                   underline="none"
-                  to="/portfolio"
+                  to="/my-portfolio/portfolio"
                   component={RouterLink}
                   onClick={() => setOpen(false)}
                 >
@@ -210,7 +210,7 @@ export default function ModalNavbar() {
                   variant="h2"
                   sx={{ color: "white", opacity: "80%", letterSpacing: 6 }}
                   underline="none"
-                  to="/contact"
+                  to="/my-portfolio/contact"
                   component={RouterLink}
                   onClick={() => setOpen(false)}
                 >

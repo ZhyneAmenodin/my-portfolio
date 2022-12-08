@@ -11,7 +11,7 @@ import MainLayout from "../layouts/index";
 export default function Router() {
   return useRoutes([
     {
-      path: "/",
+      path: "/my-portfolio",
       element: <MainLayout />,
       children: [
         { element: <Home />, index: true },
